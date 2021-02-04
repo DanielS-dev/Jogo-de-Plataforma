@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ParallaxLayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Grama.tres" type="TileSet" id=3]
+[ext_resource path="res://Monstro.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Passagem.tscn" type="PackedScene" id=5]
+
+[node name="Scene2" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 465.192, 253.52 )
+
+[node name="ParallaxLayer" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 720906, 0, 0, 720907, 1, 0, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720913, 2, 0 )
+
+[node name="Monstro" parent="." instance=ExtResource( 4 )]
+position = Vector2( 340.709, 318.21 )
+
+[node name="Passagem" parent="." instance=ExtResource( 5 )]
+position = Vector2( 537.618, 324.992 )
+scenes = "res://Word.tscn"

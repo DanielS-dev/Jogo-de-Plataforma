@@ -29,3 +29,4 @@ func _physics_process(delta):
 		$Sprite.play("Jump")
 	
 	motion = move_and_slide(motion, UP)
+	pass
