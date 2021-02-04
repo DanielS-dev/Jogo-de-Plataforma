@@ -72,10 +72,12 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 15.1797
-height = 24.3744
+height = 26.3429
 
 [node name="Monstro" type="StaticBody2D"]
 position = Vector2( 445.266, 252.397 )
+collision_layer = 2
+collision_mask = 2147483649
 script = ExtResource( 46 )
 __meta__ = {
 "_edit_group_": true
@@ -89,5 +91,5 @@ animation = "Walk"
 frame = 1
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2( 10, 5 )
+position = Vector2( 10, 4 )
 shape = SubResource( 2 )

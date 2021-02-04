@@ -29,4 +29,8 @@ func _physics_process(delta):
 		$Sprite.play("Jump")
 	
 	motion = move_and_slide(motion, UP)
-	pass
+
+
+func _on_Pes_body_entered(body):
+	
+	body.dano()

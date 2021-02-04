@@ -9,14 +9,20 @@
 [node name="Word" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 127.959, 348.798 )
 
 [node name="TileMap" parent="." instance=ExtResource( 2 )]
 
 [node name="ParallaxLayer" parent="." instance=ExtResource( 3 )]
 
 [node name="Monstro" parent="." instance=ExtResource( 14 )]
-position = Vector2( 671.554, 159.854 )
+position = Vector2( 284.763, 447.744 )
 
 [node name="Passagem" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1434.18, 68.707 )
 scenes = "res://Scene2.tscn"
+
+[node name="Monstro2" parent="." instance=ExtResource( 14 )]
+
+[node name="Monstro3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 915.315, 61.7344 )

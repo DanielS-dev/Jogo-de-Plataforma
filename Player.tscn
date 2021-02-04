@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Jump4.png" type="Texture" id=2]
@@ -14,11 +14,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Run",
@@ -28,17 +23,23 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 20.2087, 28.884 )
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 13.821
+height = 28.7643
+
+[sub_resource type="SegmentShape2D" id=3]
+b = Vector2( 13.6148, -0.0565796 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 513.06, 254.411 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1.05944, 1.05946 )
@@ -47,7 +48,7 @@ animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 2.11896, 4.76759 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -60,3 +61,16 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
+
+[node name="Pes" type="Area2D" parent="."]
+position = Vector2( -5.17474, 33.5379 )
+collision_layer = 2
+collision_mask = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Shape" type="CollisionShape2D" parent="Pes"]
+position = Vector2( -6.10352e-05, -0.16687 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Pes" to="." method="_on_Pes_body_entered"]

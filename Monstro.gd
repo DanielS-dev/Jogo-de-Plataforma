@@ -9,7 +9,7 @@ func _ready():
 	$Sprite.play("Walk")
 	posicao_inicial = $".".position.x
 	posicao_final = posicao_inicial + 100
-	pass
+	
 
 func _process(delta):
 	
@@ -23,4 +23,7 @@ func _process(delta):
 		$".".position.x -= velocidade
 		if ($".".position.x <= posicao_inicial):
 			flip = true
-	pass
+	
+
+func dano():
+	$".".queue_free()
