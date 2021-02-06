@@ -43,4 +43,4 @@ func _on_Dano_body_entered(body):
 	life -= 1
 	
 	if (life == 0):
-		$".".queue_free()
+		get_tree().change_scene("res://Menu.tscn")
