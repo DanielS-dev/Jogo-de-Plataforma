@@ -26,4 +26,9 @@ func _process(delta):
 	
 
 func dano():
+	$Sprite.play("Dead")
+	$Shape.queue_free()
+	get_node("Anim").play("Dead")
+
+func die():
 	$".".queue_free()

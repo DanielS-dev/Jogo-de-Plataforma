@@ -4,6 +4,7 @@ const UP = Vector2(0,-1)
 const GRAVITY = 20
 const SPEED = 200
 const JUMP_HEIGTH = -550
+var life = 3
 var motion = Vector2()
 
 func _physics_process(delta):
@@ -34,3 +35,12 @@ func _physics_process(delta):
 func _on_Pes_body_entered(body):
 	
 	body.dano()
+	
+	motion.y = JUMP_HEIGTH
+
+
+func _on_Dano_body_entered(body):
+	life -= 1
+	
+	if (life == 0):
+		$".".queue_free()
